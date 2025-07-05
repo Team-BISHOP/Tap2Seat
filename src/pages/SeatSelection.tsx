@@ -70,34 +70,34 @@ const SeatSelection = () => {
       />
       <div className="fixed inset-0 bg-background/80" />
       
-      <div className="relative z-10 p-8">
+      <div className="relative z-10 p-4 sm:p-6 md:p-8">
         <div className="container mx-auto max-w-6xl">
           {/* Header */}
-          <div className="mb-8 text-center">
-            <h1 className="font-cinematic text-4xl font-bold mb-4 text-primary-glow neon-text">
+          <div className="mb-6 sm:mb-8 text-center">
+            <h1 className="font-cinematic text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-primary-glow neon-text">
               Select Your Seats
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-base sm:text-lg">
               Tap to select your preferred seats
             </p>
           </div>
 
           {/* Screen */}
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <div className="w-full max-w-4xl mx-auto">
-              <div className="bg-gradient-primary h-4 rounded-t-3xl mb-4 opacity-80" />
-              <p className="text-center text-muted-foreground">SCREEN</p>
+              <div className="bg-gradient-primary h-3 sm:h-4 rounded-t-3xl mb-3 sm:mb-4 opacity-80" />
+              <p className="text-center text-muted-foreground text-sm sm:text-base">SCREEN</p>
             </div>
           </div>
 
           {/* Seat Map */}
-          <div className="mb-8">
-            <div className="max-w-4xl mx-auto bg-card/50 backdrop-blur-md rounded-2xl p-8 border border-border">
-              <div className="space-y-4">
+          <div className="mb-6 sm:mb-8">
+            <div className="max-w-4xl mx-auto bg-card/50 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 border border-border">
+              <div className="space-y-2 sm:space-y-4">
                 {rows.map((row) => (
-                  <div key={row} className="flex items-center justify-center gap-2">
-                    <div className="w-8 text-center font-bold text-primary-glow">{row}</div>
-                    <div className="flex gap-2">
+                  <div key={row} className="flex items-center justify-center gap-1 sm:gap-2">
+                    <div className="w-6 sm:w-8 text-center font-bold text-primary-glow text-sm sm:text-base">{row}</div>
+                    <div className="flex gap-1 sm:gap-2">
                       {Array.from({ length: seatsPerRow }, (_, index) => {
                         const seatNumber = index + 1;
                         const seatId = `${row}${seatNumber}`;
@@ -106,7 +106,7 @@ const SeatSelection = () => {
                         return (
                           <button
                             key={seatId}
-                            className={`w-8 h-8 rounded-lg border transition-all duration-300 ${getSeatClass(status)}`}
+                            className={`w-6 h-6 sm:w-8 sm:h-8 rounded-lg border transition-all duration-300 ${getSeatClass(status)}`}
                             onClick={() => handleSeatClick(seatId)}
                             disabled={status === 'occupied'}
                           >
@@ -124,21 +124,22 @@ const SeatSelection = () => {
           </div>
 
           {/* Legend */}
-          <div className="flex justify-center gap-8 mb-8 flex-wrap">
+          <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 flex-wrap">
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-seat-available rounded" />
-              <span className="text-sm">Available</span>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-seat-available rounded" />
+              <span className="text-xs sm:text-sm">Available</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-seat-selected rounded animate-pulse" />
-              <span className="text-sm">Selected</span>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-seat-selected rounded animate-pulse" />
+              <span className="text-xs sm:text-sm">Selected</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-seat-occupied rounded" />
-              <span className="text-sm">Occupied</span>
-            </div>            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-seat-available border-2 border-accent/50 rounded animate-pulse shadow-accent-glow" />
-              <span className="text-sm">Best Seats</span>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-seat-occupied rounded" />
+              <span className="text-xs sm:text-sm">Occupied</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-seat-available border-2 border-accent/50 rounded animate-pulse shadow-accent-glow" />
+              <span className="text-xs sm:text-sm">Best Seats</span>
             </div>
           </div>
 

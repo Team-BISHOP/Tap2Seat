@@ -118,7 +118,7 @@ const TheaterSelection = () => {
               <CardContent>
                 <div className="mb-4">
                   <h4 className="font-medium mb-3 text-primary-glow">Available Showtimes</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                     {theater.showtimes.map((time) => (
                       <Button
                         key={time}

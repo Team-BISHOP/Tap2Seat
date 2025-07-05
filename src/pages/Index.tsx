@@ -106,25 +106,25 @@ const Index = () => {
 					poster: movieNeonDreams
 				}}
 			/>			{/* Filters Section */}
-			<section className="py-8 bg-card/50 backdrop-blur-md relative">
+			<section className="py-6 sm:py-8 bg-card/50 backdrop-blur-md relative">
 				<CinematicBackground variant="subtle" />
 				<div className="absolute top-0 left-0 right-0 h-px bg-muted/20"></div>
 				<div className="absolute bottom-0 left-0 right-0 h-px bg-muted/20"></div>
-				<div className="container mx-auto px-8">
-					<div className="flex flex-wrap items-center gap-4">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8">
+					<div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4">
 						<div className="flex items-center gap-2 text-primary-glow">
-							<Filter className="w-5 h-5" />
-							<span className="font-medium">Filters:</span>
+							<Filter className="w-4 h-4 sm:w-5 sm:h-5" />
+							<span className="font-medium text-sm sm:text-base">Filters:</span>
 						</div>
 
 						{/* Search Bar */}
-						<div className="relative flex-1 max-w-md">
-							<Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+						<div className="relative flex-1 w-full sm:max-w-md">
+							<Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
 							<Input
 								placeholder="Search movies..."
 								value={searchTerm}
 								onChange={(e) => setSearchTerm(e.target.value)}
-								className="pl-10 h-10 glass-card focus:neon-glow transition-all duration-300"
+								className="pl-9 sm:pl-10 h-9 sm:h-10 glass-card focus:neon-glow transition-all duration-300 text-sm sm:text-base"
 							/>
 						</div>
 

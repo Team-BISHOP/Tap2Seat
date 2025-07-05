@@ -64,7 +64,7 @@ const Confirmation = () => {
             </div>
             
             {/* Ticket Details */}
-            <div className="grid grid-cols-2 gap-4 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
                 <div className="text-muted-foreground">Movie</div>
                 <div className="font-medium capitalize text-primary-glow">

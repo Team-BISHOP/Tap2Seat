@@ -69,22 +69,22 @@ const Checkout = () => {
 
   if (showFingerprint) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Card className="glass-card max-w-md w-full mx-4">
-          <CardContent className="p-8 text-center">
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <Card className="glass-card max-w-md w-full">
+          <CardContent className="p-6 sm:p-8 text-center">
             <div className="mb-6">
-              <Fingerprint className="w-24 h-24 mx-auto text-primary animate-pulse-soft" />
+              <Fingerprint className="w-16 h-16 sm:w-24 sm:h-24 mx-auto text-primary animate-pulse-soft" />
             </div>
-            <h2 className="font-cinematic text-2xl font-bold mb-4 text-primary-glow">
+            <h2 className="font-cinematic text-xl sm:text-2xl font-bold mb-4 text-primary-glow">
               Touch to Confirm
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-6 text-sm sm:text-base">
               Place your finger on the sensor to complete your booking
             </p>
             <div className="w-full bg-muted rounded-full h-2">
               <div className="bg-gradient-primary h-2 rounded-full animate-pulse" style={{ width: '100%' }} />
             </div>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-4">
               Processing payment...
             </p>
           </CardContent>
@@ -107,45 +107,45 @@ const Checkout = () => {
       <div className="fixed inset-0 bg-black/65 z-0"></div>
       
       {/* Content wrapper */}
-      <div className="relative z-10 p-8">
+      <div className="relative z-10 p-4 sm:p-6 md:p-8">
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="font-cinematic text-4xl font-bold mb-4 text-primary-glow neon-text">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="font-cinematic text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-primary-glow neon-text">
             Checkout
           </h1>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base sm:text-lg">
             Review your booking and complete payment
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Booking Summary */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
             {/* Movie & Theater Info */}
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="font-cinematic text-primary-glow">Booking Details</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+              <CardContent className="space-y-4 p-4 sm:p-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
                     <div className="text-sm text-muted-foreground">Movie</div>
-                    <div className="font-medium capitalize">{movieId?.replace('-', ' ')}</div>
+                    <div className="font-medium capitalize text-sm sm:text-base">{movieId?.replace('-', ' ')}</div>
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Theater</div>
-                    <div className="font-medium capitalize">{theater?.replace('-', ' ')}</div>
+                    <div className="font-medium capitalize text-sm sm:text-base">{theater?.replace('-', ' ')}</div>
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Showtime</div>
-                    <div className="font-medium">{showtime}</div>
+                    <div className="font-medium text-sm sm:text-base">{showtime}</div>
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Seats</div>
                     <div className="flex flex-wrap gap-1">
                       {seats.map(seat => (
-                        <Badge key={seat} variant="default" className="bg-primary text-primary-foreground">
+                        <Badge key={seat} variant="default" className="bg-primary text-primary-foreground text-xs">
                           {seat}
                         </Badge>
                       ))}
@@ -164,14 +164,14 @@ const Checkout = () => {
                 <CardContent>
                   <div className="space-y-3">
                     {foodItems.map((item: any, index: number) => (
-                      <div key={index} className="flex justify-between items-center">
-                        <div>
-                          <div className="font-medium">{item.item?.name}</div>
-                          <div className="text-sm text-muted-foreground">
+                      <div key={index} className="flex justify-between items-start sm:items-center flex-col sm:flex-row gap-2 sm:gap-0">
+                        <div className="flex-1">
+                          <div className="font-medium text-sm sm:text-base">{item.item?.name}</div>
+                          <div className="text-xs sm:text-sm text-muted-foreground">
                             Quantity: {item.quantity}
                           </div>
                         </div>
-                        <div className="font-bold text-accent-glow">
+                        <div className="font-bold text-accent-glow text-sm sm:text-base">
                           ${(item.item?.price || 0) * item.quantity}
                         </div>
                       </div>
@@ -191,7 +191,7 @@ const Checkout = () => {
                   {paymentMethods.map(method => (
                     <div
                       key={method.id}
-                      className={`p-4 rounded-lg border cursor-pointer transition-all duration-300 ${
+                      className={`p-3 sm:p-4 rounded-lg border cursor-pointer transition-all duration-300 ${
                         selectedPayment === method.id
                           ? 'border-primary bg-primary/10 neon-glow'
                           : 'border-border hover:border-primary/50'
@@ -199,10 +199,10 @@ const Checkout = () => {
                       onClick={() => setSelectedPayment(method.id)}
                     >
                       <div className="flex items-center gap-3">
-                        <div className="text-primary">{method.icon}</div>
-                        <div>
-                          <div className="font-medium">{method.name}</div>
-                          <div className="text-sm text-muted-foreground">
+                        <div className="text-primary flex-shrink-0">{method.icon}</div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium text-sm sm:text-base">{method.name}</div>
+                          <div className="text-xs sm:text-sm text-muted-foreground truncate">
                             {method.description}
                           </div>
                         </div>
@@ -215,32 +215,32 @@ const Checkout = () => {
           </div>
 
           {/* Price Summary */}
-          <div className="lg:col-span-1">
-            <Card className="glass-card sticky top-8">
-              <CardHeader>
-                <CardTitle className="font-cinematic text-primary-glow">Order Summary</CardTitle>
+          <div className="lg:col-span-1 order-first lg:order-last">
+            <Card className="glass-card lg:sticky lg:top-8">
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="font-cinematic text-primary-glow text-lg sm:text-xl">Order Summary</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex justify-between">
+              <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                <div className="flex justify-between text-sm sm:text-base">
                   <span>Tickets ({seats.length})</span>
                   <span>${ticketPrice}</span>
                 </div>
                 
                 {foodTotal > 0 && (
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-sm sm:text-base">
                     <span>Food & Beverages</span>
                     <span>${foodTotal}</span>
                   </div>
                 )}
                 
-                <div className="flex justify-between text-sm text-muted-foreground">
+                <div className="flex justify-between text-xs sm:text-sm text-muted-foreground">
                   <span>Service Fee</span>
                   <span>${servicesFee}</span>
                 </div>
                 
                 <Separator />
                 
-                <div className="flex justify-between text-lg font-bold">
+                <div className="flex justify-between text-base sm:text-lg font-bold">
                   <span>Total</span>
                   <span className="text-accent-glow">${totalAmount}</span>
                 </div>
@@ -252,8 +252,8 @@ const Checkout = () => {
                   onClick={handleConfirmBooking}
                   disabled={!selectedPayment}
                 >
-                  <Fingerprint className="w-5 h-5 mr-2" />
-                  Confirm Booking
+                  <Fingerprint className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  <span className="text-sm sm:text-base">Confirm Booking</span>
                 </Button>
                 
                 <p className="text-xs text-muted-foreground text-center">

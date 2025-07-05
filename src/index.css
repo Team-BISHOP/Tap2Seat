@@ -292,6 +292,90 @@ All colors MUST be HSL for consistency.
   }
 }
 
+/* Mobile-first responsive utilities */
+@layer utilities {
+  /* Mobile-specific spacing */
+  .mobile-padding {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+  
+  .mobile-margin {
+    @apply mx-4 sm:mx-6 md:mx-8;
+  }
+  
+  /* Mobile-friendly text sizes */
+  .mobile-title {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  .mobile-subtitle {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  
+  .mobile-body {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  /* Mobile-friendly grid layouts */
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  /* Mobile-friendly card padding */
+  .mobile-card-padding {
+    @apply p-4 sm:p-6;
+  }
+  
+  /* Mobile-friendly button sizes */
+  .mobile-button {
+    @apply px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base;
+  }
+  
+  /* Mobile-friendly seat sizing */
+  .mobile-seat {
+    @apply w-6 h-6 sm:w-8 sm:h-8 text-xs;
+  }
+  
+  /* Mobile-friendly sticky positioning */
+  .mobile-sticky {
+    @apply relative lg:sticky lg:top-8;
+  }
+  
+  /* Mobile-friendly gap spacing */
+  .mobile-gap {
+    @apply gap-3 sm:gap-4 md:gap-6;
+  }
+  
+  /* Mobile-friendly flex spacing */
+  .mobile-flex-gap {
+    @apply flex flex-col sm:flex-row gap-3 sm:gap-4;
+  }
+  
+  /* Mobile-friendly minimum touch targets */
+  .mobile-touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Mobile-friendly overflow handling */
+  .mobile-overflow {
+    @apply overflow-x-auto;
+  }
+  
+  /* Mobile-friendly text truncation */
+  .mobile-truncate {
+    @apply truncate sm:whitespace-normal;
+  }
+  
+  /* Mobile-friendly icon sizes */
+  .mobile-icon {
+    @apply w-4 h-4 sm:w-5 sm:h-5;
+  }
+  
+  .mobile-icon-lg {
+    @apply w-5 h-5 sm:w-6 sm:h-6;
+  }
+}
+
 /* Cinema Animations */
 @keyframes seat-bounce {
   0%, 100% { transform: scale(1); }

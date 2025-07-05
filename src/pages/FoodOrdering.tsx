@@ -131,21 +131,21 @@ const FoodOrdering = () => {
       <div className="fixed inset-0 bg-black/65 z-0"></div>
       
       {/* Content wrapper */}
-      <div className="relative z-10 p-8">
+      <div className="relative z-10 p-4 sm:p-6 md:p-8">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="font-cinematic text-4xl font-bold mb-4 text-primary-glow neon-text">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="font-cinematic text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-primary-glow neon-text">
             Food & Beverages
           </h1>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base sm:text-lg">
             Enhance your movie experience with delicious snacks
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Food Menu */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6 lg:space-y-8">
             {categories.map(category => (
               <div key={category}>
                 <h2 className="font-cinematic text-2xl font-bold mb-4 text-primary-glow">

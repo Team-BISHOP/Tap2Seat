@@ -33,18 +33,19 @@ const CinematicHero: React.FC<CinematicHeroProps> = ({
       <CinematicBackground variant="animated" />
       
       {/* Main Content */}
-      <div className="relative z-10 text-center px-8 max-w-6xl mx-auto">        {/* Main Title */}
-        <div className="mb-8">
-          <h1 className="font-cinematic text-6xl md:text-8xl font-bold mb-6 text-primary-glow neon-text animate-pulse">
+      <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
+        {/* Main Title */}
+        <div className="mb-6 sm:mb-8">
+          <h1 className="font-cinematic text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 text-primary-glow neon-text animate-pulse">
             {title}
           </h1>
           {subtitle && (
-            <h2 className="text-2xl md:text-3xl font-medium text-foreground mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-foreground mb-3 sm:mb-4">
               {subtitle}
             </h2>
           )}
           {description && (
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               {description}
             </p>
           )}
@@ -81,51 +82,51 @@ const CinematicHero: React.FC<CinematicHeroProps> = ({
 
         {/* Quick Actions */}
         {showQuickActions && (
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8">
             <Button 
               variant="cinema" 
               size="lg" 
-              className="group hover:scale-105 transition-all duration-300"
+              className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto"
             >
-              <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Book Now
+              <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm sm:text-base">Book Now</span>
             </Button>
             <Button 
               variant="cinemaSecondary" 
               size="lg"
-              className="group hover:scale-105 transition-all duration-300"
+              className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto"
             >
-              <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              View Showtimes
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm sm:text-base">View Showtimes</span>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="group hover:scale-105 transition-all duration-300"
+              className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto"
             >
-              <MapPin className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Find Theaters
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm sm:text-base">Find Theaters</span>
             </Button>
           </div>
         )}
 
         {/* Cinema Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-          <div className="glass-card p-4 rounded-lg text-center">
-            <div className="text-2xl font-bold text-primary-glow">500+</div>
-            <div className="text-sm text-muted-foreground">Movies</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto">
+          <div className="glass-card p-3 sm:p-4 rounded-lg text-center">
+            <div className="text-lg sm:text-2xl font-bold text-primary-glow">500+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Movies</div>
           </div>
-          <div className="glass-card p-4 rounded-lg text-center">
-            <div className="text-2xl font-bold text-accent-glow">50+</div>
-            <div className="text-sm text-muted-foreground">Theaters</div>
+          <div className="glass-card p-3 sm:p-4 rounded-lg text-center">
+            <div className="text-lg sm:text-2xl font-bold text-accent-glow">50+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Theaters</div>
           </div>
-          <div className="glass-card p-4 rounded-lg text-center">
-            <div className="text-2xl font-bold text-secondary-glow">1M+</div>
-            <div className="text-sm text-muted-foreground">Happy Customers</div>
+          <div className="glass-card p-3 sm:p-4 rounded-lg text-center">
+            <div className="text-lg sm:text-2xl font-bold text-secondary-glow">1M+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Happy Customers</div>
           </div>
-          <div className="glass-card p-4 rounded-lg text-center">
-            <div className="text-2xl font-bold text-primary-glow">24/7</div>
-            <div className="text-sm text-muted-foreground">Support</div>
+          <div className="glass-card p-3 sm:p-4 rounded-lg text-center">
+            <div className="text-lg sm:text-2xl font-bold text-primary-glow">24/7</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Support</div>
           </div>
         </div>
       </div>      {/* Scroll Indicator with Cinema Theme */}
