@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { CreditCard, Smartphone, Fingerprint } from "lucide-react";
 import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
 import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
+import Navbar from "@/components/Navbar";
 
 const paymentMethods = [
   {
@@ -93,7 +94,10 @@ const Checkout = () => {
     );
   }
   return (
-    <div className="min-h-screen relative">      {/* Cinema hall background */}
+    <div className="min-h-screen relative">
+      <Navbar title="Checkout" />
+      
+      {/* Cinema hall background */}
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{

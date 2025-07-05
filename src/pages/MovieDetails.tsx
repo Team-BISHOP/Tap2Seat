@@ -9,6 +9,7 @@ import movieQuantumStrike from "@/assets/movie-quantum-strike.jpg";
 import movieStarlightRomance from "@/assets/movie-starlight-romance.jpg";
 import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
 import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
+import Navbar from "@/components/Navbar";
 
 const movies = {
   "neon-dreams": {
@@ -59,7 +60,10 @@ const MovieDetails = () => {
     return <div className="min-h-screen flex items-center justify-center">Movie not found</div>;
   }
   return (
-    <div className="min-h-screen relative">      {/* Cinema hall background */}
+    <div className="min-h-screen relative">
+      <Navbar title={movie.title} />
+      
+      {/* Cinema hall background */}
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{

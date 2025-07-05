@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Star } from "lucide-react";
 import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
 import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
+import Navbar from "@/components/Navbar";
 
 const theaters = [
   {
@@ -53,6 +54,8 @@ const TheaterSelection = () => {
   };
   return (
     <div className="min-h-screen relative">
+      <Navbar title="Select Theater" />
+      
       {/* Cinema hall background */}
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"

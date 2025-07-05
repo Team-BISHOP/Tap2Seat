@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Plus, Minus, ShoppingCart } from "lucide-react";
 import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
 import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
+import Navbar from "@/components/Navbar";
 
 interface FoodItem {
   id: string;
@@ -117,6 +118,8 @@ const FoodOrdering = () => {
   };
   return (
     <div className="min-h-screen relative">
+      <Navbar title="Food & Beverages" />
+      
       {/* Cinema hall background */}
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"

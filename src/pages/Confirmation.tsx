@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Download, MapPin, QrCode } from "lucide-react";
 import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
 import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
+import Navbar from "@/components/Navbar";
 
 const Confirmation = () => {
   const { movieId } = useParams();
@@ -16,6 +17,8 @@ const Confirmation = () => {
   const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   return (
     <div className="min-h-screen relative">
+      <Navbar title="Booking Confirmed" />
+      
       {/* Cinema hall background */}
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"

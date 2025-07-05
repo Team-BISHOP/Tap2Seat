@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, MapPin, Filter, Star, Clock } from "lucide-react";
+import { Search, MapPin, Filter, Star, Clock, Facebook, Twitter, Instagram, Linkedin, Phone, Mail } from "lucide-react";
 import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
 import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
 import movieNeonDreams from "@/assets/movie-neon-dreams.jpg";
@@ -15,6 +15,7 @@ import movieStarlightRomance from "@/assets/movie-starlight-romance.jpg";
 import CinematicHero from "@/components/CinematicHero";
 import CinematicBackground from "@/components/CinematicBackground";
 import CinematicLoader from "@/components/CinematicLoader";
+import Navbar from "@/components/Navbar";
 
 const movies = [
 	{
@@ -100,7 +101,10 @@ const Index = () => {
 	};
 
 	return (
-		<div className="min-h-screen relative">			{/* Cinema hall background for the entire page */}
+		<div className="min-h-screen relative">
+			<Navbar showBack={false} />
+			
+			{/* Cinema hall background for the entire page */}
 			<div 
 				className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
 				style={{
@@ -292,40 +296,147 @@ const Index = () => {
 					)}
 				</div>
 			</section>			{/* Footer */}
-			<footer className="bg-card-glass py-12 relative">
-				<div className="absolute top-0 left-0 right-0 h-px bg-muted/20"></div><div className="container mx-auto px-8 text-center">
-					<div className="font-cinematic text-3xl font-bold mb-4 text-primary-glow neon-text">
-						TAP2SEAT
+			<footer className="bg-card-glass relative border-t border-muted/20">
+				<div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+				
+				{/* Main Footer Content */}
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 py-16">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+						
+						{/* Company Info */}
+						<div className="lg:col-span-2">
+							<div className="mb-6">
+								<div className="font-cinematic text-3xl font-bold mb-3 text-primary-glow neon-text">
+									TAP2SEAT
+								</div>
+								<p className="text-muted-foreground text-base leading-relaxed max-w-md">
+									Your premium cinema booking experience. Discover the latest blockbusters, 
+									reserve your perfect seats, and enjoy gourmet snacks – all in one seamless platform.
+								</p>
+							</div>
+							
+							{/* Social Media */}
+							<div className="mb-6">
+								<h3 className="text-lg font-semibold mb-4 text-primary-glow">Follow Us</h3>
+								<div className="flex gap-4">
+									<a
+										href="#"
+										className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all duration-300 hover:scale-110 group border border-primary/20"
+									>
+										<Facebook className="w-5 h-5 text-primary group-hover:text-primary-glow" />
+									</a>
+									<a
+										href="#"
+										className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all duration-300 hover:scale-110 group border border-primary/20"
+									>
+										<Twitter className="w-5 h-5 text-primary group-hover:text-primary-glow" />
+									</a>
+									<a
+										href="#"
+										className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all duration-300 hover:scale-110 group border border-primary/20"
+									>
+										<Instagram className="w-5 h-5 text-primary group-hover:text-primary-glow" />
+									</a>
+									<a
+										href="#"
+										className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all duration-300 hover:scale-110 group border border-primary/20"
+									>
+										<Linkedin className="w-5 h-5 text-primary group-hover:text-primary-glow" />
+									</a>
+								</div>
+							</div>
+						</div>
+
+						{/* Quick Links */}
+						<div>
+							<h3 className="text-lg font-semibold mb-4 text-primary-glow">Quick Links</h3>
+							<ul className="space-y-3">
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Now Showing
+									</a>
+								</li>
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Coming Soon
+									</a>
+								</li>
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Cinema Locations
+									</a>
+								</li>
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Special Offers
+									</a>
+								</li>
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Gift Cards
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						{/* Support & Info */}
+						<div>
+							<h3 className="text-lg font-semibold mb-4 text-primary-glow">Support & Info</h3>
+							<ul className="space-y-3">
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Help Center
+									</a>
+								</li>
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Contact Us
+									</a>
+								</li>
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Terms of Service
+									</a>
+								</li>
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Privacy Policy
+									</a>
+								</li>
+								<li>
+									<a href="#" className="text-muted-foreground hover:text-primary-glow transition-colors text-sm">
+										Accessibility
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<p className="text-muted-foreground mb-6">
-						Your premium cinema booking experience
-					</p>
-					<div className="flex justify-center gap-8 text-sm text-muted-foreground">
-						<a
-							href="#"
-							className="hover:text-primary-glow transition-colors"
-						>
-							About Us
-						</a>
-						<a
-							href="#"
-							className="hover:text-primary-glow transition-colors"
-						>
-							Support
-						</a>
-						<a
-							href="#"
-							className="hover:text-primary-glow transition-colors"
-						>
-							Terms
-						</a>
-						<a
-							href="#"
-							className="hover:text-primary-glow transition-colors"
-						>
-							Privacy
-						</a>
-					</div>				</div>
+				</div>
+
+				{/* Bottom Bar */}
+				<div className="border-t border-muted/20 bg-background/50 backdrop-blur-sm">
+					<div className="container mx-auto px-4 sm:px-6 md:px-8 py-6">
+						<div className="flex flex-col md:flex-row justify-between items-center gap-4">
+							<div className="text-sm text-muted-foreground text-center md:text-left">
+								© 2025 TAP2SEAT. All rights reserved.
+							</div>
+							<div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-sm text-muted-foreground">
+								<span className="flex items-center gap-2">
+									<span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+									System Status: Online
+								</span>
+								<span className="flex items-center gap-1 hover:text-primary-glow transition-colors cursor-pointer">
+									<Mail className="w-4 h-4" />
+									support@tap2seat.com
+								</span>
+								<span className="flex items-center gap-1 hover:text-primary-glow transition-colors cursor-pointer">
+									<Phone className="w-4 h-4" />
+									+1 (555) 123-SEAT
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</footer>
 			</div>
 		</div>
