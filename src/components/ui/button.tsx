@@ -13,7 +13,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "creative-border hover:neon-glow hover:text-accent-foreground transition-all duration-300",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -21,7 +21,7 @@ const buttonVariants = cva(
         cinema: 
           "bg-gradient-primary text-primary-foreground shadow-glow font-bold hover:shadow-[0_0_40px_hsl(var(--primary)/0.6)] hover:scale-105 transition-all duration-300",
         cinemaSecondary:
-          "bg-secondary/20 text-secondary-glow border border-secondary backdrop-blur-sm hover:bg-secondary/30 hover:shadow-glow transition-all duration-300",
+          "bg-secondary/20 text-secondary-glow creative-border backdrop-blur-sm hover:bg-secondary/30 hover:neon-glow transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",

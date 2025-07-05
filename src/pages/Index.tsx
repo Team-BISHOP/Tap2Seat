@@ -107,7 +107,7 @@ const Index = () => {
                 placeholder="Search for movies, theaters, or showtimes..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 h-14 text-lg glass-card border-primary/30 focus:border-primary"
+                className="pl-12 h-14 text-lg glass-card focus:neon-glow focus:scale-105 transition-all duration-300"
               />
             </div>
 
@@ -125,7 +125,9 @@ const Index = () => {
       </section>
 
       {/* Filters Section */}
-      <section className="py-8 bg-card/50 backdrop-blur-md border-y border-border">
+      <section className="py-8 bg-card/50 backdrop-blur-md relative">
+        <div className="glow-divider absolute top-0 left-0 right-0"></div>
+        <div className="glow-divider absolute bottom-0 left-0 right-0"></div>
         <div className="container mx-auto px-8">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2 text-primary-glow">
@@ -266,7 +268,8 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-card-glass border-t border-border py-12">
+      <footer className="bg-card-glass py-12 relative">
+        <div className="glow-divider absolute top-0 left-0 right-0"></div>
         <div className="container mx-auto px-8 text-center">
           <div className="font-cinematic text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-primary">
             TAP2SEAT
