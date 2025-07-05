@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Plus, Minus, ShoppingCart } from "lucide-react";
+import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
+import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
 
 interface FoodItem {
   id: string;
@@ -113,9 +115,23 @@ const FoodOrdering = () => {
     
     navigate(`/checkout/${movieId}?${params.toString()}`);
   };
-
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen relative">
+      {/* Cinema hall background */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{
+          backgroundImage: `url(${cinemaHeroBg})`,
+          filter: 'blur(1px) grayscale(30%)',
+          opacity: 0.4
+        }}
+      ></div>
+      
+      {/* Dark overlay for readability */}
+      <div className="fixed inset-0 bg-black/65 z-0"></div>
+      
+      {/* Content wrapper */}
+      <div className="relative z-10 p-8">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-8">
@@ -240,8 +256,8 @@ const FoodOrdering = () => {
                 </Button>
               </CardContent>
             </Card>
-          </div>
-        </div>
+          </div>        </div>
+      </div>
       </div>
     </div>
   );

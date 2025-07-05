@@ -7,6 +7,8 @@ import movieNeonDreams from "@/assets/movie-neon-dreams.jpg";
 import movieShadowRealm from "@/assets/movie-shadow-realm.jpg";
 import movieQuantumStrike from "@/assets/movie-quantum-strike.jpg";
 import movieStarlightRomance from "@/assets/movie-starlight-romance.jpg";
+import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
+import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
 
 const movies = {
   "neon-dreams": {
@@ -56,11 +58,24 @@ const MovieDetails = () => {
   if (!movie) {
     return <div className="min-h-screen flex items-center justify-center">Movie not found</div>;
   }
-
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <div className="relative h-[70vh] overflow-hidden">
+    <div className="min-h-screen relative">      {/* Cinema hall background */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{
+          backgroundImage: `url(${theaterSeatsBg})`,
+          filter: 'blur(1px) grayscale(20%)',
+          opacity: 0.4
+        }}
+      ></div>
+      
+      {/* Dark overlay for readability */}
+      <div className="fixed inset-0 bg-black/60 z-0"></div>
+      
+      {/* Content wrapper */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <div className="relative h-[70vh] overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${movie.poster})` }}
@@ -157,8 +172,8 @@ const MovieDetails = () => {
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
-        </Tabs>
+          </TabsContent>        </Tabs>
+      </div>
       </div>
     </div>
   );

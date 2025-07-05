@@ -1,5 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
+import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
+import ImageTest from "@/components/ImageTest";
 
 const NotFound = () => {
   const location = useLocation();
@@ -8,13 +11,26 @@ const NotFound = () => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
-    );
-  }, [location.pathname]);
+    );  }, [location.pathname]);
   
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">      {/* Direct background test */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${cinemaHeroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.8
+        }}
+      ></div>
+      
+      {/* Simple dark overlay */}
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
+      
       {/* Enhanced background with cinema elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-10">
         {/* Film strip decorative elements */}
         <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-r from-transparent via-secondary/20 to-transparent"></div>
@@ -33,7 +49,9 @@ const NotFound = () => {
         <div className="absolute bottom-20 left-20 w-12 h-12 border-4 border-dashed border-secondary/30 rounded-full animate-spin-slow animate-reverse"></div>
       </div>
       
-      <div className="text-center glass-card p-12 rounded-2xl neon-glow relative z-10 max-w-2xl mx-8">        {/* Cinema-themed 404 */}
+      <div className="text-center glass-card p-12 rounded-2xl neon-glow relative z-10 max-w-2xl mx-8">
+        <ImageTest />
+        {/* Cinema-themed 404 */}
         <div className="font-cinematic text-8xl font-bold mb-6 text-primary-glow neon-text relative">
           404
           {/* Film frame decoration */}

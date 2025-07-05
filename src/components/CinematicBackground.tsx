@@ -1,5 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import theaterSeatsBg from '@/assets/theater-seats-bg.jpg';
+import cinemaHeroBg from '@/assets/cinema-hero-bg.jpg';
 
 interface CinematicBackgroundProps {
   className?: string;
@@ -28,6 +30,16 @@ const CinematicBackground: React.FC<CinematicBackgroundProps> = ({
       </div>
     ),    animated: (
       <div className="absolute inset-0 overflow-hidden opacity-25">
+        {/* Subtle theater background pattern */}
+        <div 
+          className="absolute inset-0 bg-repeat opacity-5"
+          style={{
+            backgroundImage: `url(${theaterSeatsBg})`,
+            backgroundSize: '300px 300px',
+            filter: 'blur(1px) grayscale(70%)'
+          }}
+        ></div>
+        
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
         
         {/* Cinema curtain effect */}

@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Download, MapPin, QrCode } from "lucide-react";
+import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
+import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
 
 const Confirmation = () => {
   const { movieId } = useParams();
@@ -12,9 +14,23 @@ const Confirmation = () => {
   const bookingId = `TAP2SEAT${Date.now().toString().slice(-6)}`;
   const currentDate = new Date().toLocaleDateString();
   const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen relative">
+      {/* Cinema hall background */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{
+          backgroundImage: `url(${theaterSeatsBg})`,
+          filter: 'blur(1px) grayscale(20%)',
+          opacity: 0.4
+        }}
+      ></div>
+      
+      {/* Dark overlay for readability */}
+      <div className="fixed inset-0 bg-black/60 z-0"></div>
+      
+      {/* Content wrapper */}
+      <div className="relative z-10 p-8">
       <div className="container mx-auto max-w-2xl">
         {/* Success Animation */}
         <div className="text-center mb-8">
@@ -136,7 +152,7 @@ const Confirmation = () => {
               <li>• Contact support for any issues: support@tap2seat.com</li>
             </ul>
           </CardContent>
-        </Card>
+        </Card>      </div>
       </div>
     </div>
   );

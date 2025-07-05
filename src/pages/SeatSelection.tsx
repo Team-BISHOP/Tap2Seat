@@ -63,13 +63,12 @@ const SeatSelection = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Background */}
+    <div className="min-h-screen">      {/* Background */}
       <div 
-        className="fixed inset-0 bg-cover bg-center opacity-20"
+        className="fixed inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: `url(${theaterSeatsBg})` }}
       />
-      <div className="fixed inset-0 bg-background/90" />
+      <div className="fixed inset-0 bg-background/80" />
       
       <div className="relative z-10 p-8">
         <div className="container mx-auto max-w-6xl">

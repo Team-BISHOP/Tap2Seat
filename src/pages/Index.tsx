@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, MapPin, Filter, Star, Clock } from "lucide-react";
 import cinemaHeroBg from "@/assets/cinema-hero-bg.jpg";
+import theaterSeatsBg from "@/assets/theater-seats-bg.jpg";
 import movieNeonDreams from "@/assets/movie-neon-dreams.jpg";
 import movieShadowRealm from "@/assets/movie-shadow-realm.jpg";
 import movieQuantumStrike from "@/assets/movie-quantum-strike.jpg";
@@ -77,16 +78,29 @@ const Index = () => {
 		const matchesFormat = selectedFormat === "All" || movie.format.includes(selectedFormat);
 
 		return matchesSearch && matchesGenre && matchesLanguage && matchesFormat;
-	});
-	return (
-		<div className="min-h-screen">
-			{/* Hero Section */}
-			<CinematicHero
-				title="TAP2SEAT"
-				subtitle="Experience Cinema Like Never Before"
-				description="Book your perfect movie experience with premium seating, gourmet snacks, and immersive entertainment"
-				featuredMovie={{
-					title: "Neon Dreams",
+	});	return (
+		<div className="min-h-screen relative">			{/* Cinema hall background for the entire page */}
+			<div 
+				className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+				style={{
+					backgroundImage: `url(${theaterSeatsBg})`,
+					filter: 'blur(1px) grayscale(10%)',
+					opacity: 0.5
+				}}
+			></div>
+			
+			{/* Cinematic gradient overlay */}
+			<div className="fixed inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50 z-0"></div>
+			
+			{/* Content wrapper */}
+			<div className="relative z-10">
+				{/* Hero Section */}
+				<CinematicHero
+					title="TAP2SEAT"
+					subtitle="Experience Cinema Like Never Before"
+					description="Book your perfect movie experience with premium seating, gourmet snacks, and immersive entertainment"
+					featuredMovie={{
+						title: "Neon Dreams",
 					genre: "Sci-Fi Thriller",
 					rating: "4.8",
 					poster: movieNeonDreams
@@ -287,9 +301,9 @@ const Index = () => {
 						>
 							Privacy
 						</a>
-					</div>
-				</div>
+					</div>				</div>
 			</footer>
+			</div>
 		</div>
 	);
 };
