@@ -17,6 +17,9 @@ interface CinematicHeroProps {
     rating: string;
     poster: string;
   };
+  onBookNow?: () => void;
+  onViewShowtimes?: () => void;
+  onFindTheaters?: () => void;
 }
 
 const CinematicHero: React.FC<CinematicHeroProps> = ({
@@ -25,7 +28,10 @@ const CinematicHero: React.FC<CinematicHeroProps> = ({
   description,
   className,
   showQuickActions = true,
-  featuredMovie
+  featuredMovie,
+  onBookNow,
+  onViewShowtimes,
+  onFindTheaters
 }) => {
   return (
     <section className={cn('relative min-h-screen flex items-center justify-center overflow-hidden', className)}>
@@ -87,6 +93,7 @@ const CinematicHero: React.FC<CinematicHeroProps> = ({
               variant="cinema" 
               size="lg" 
               className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+              onClick={onBookNow}
             >
               <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
               <span className="text-sm sm:text-base">Book Now</span>
@@ -95,6 +102,7 @@ const CinematicHero: React.FC<CinematicHeroProps> = ({
               variant="cinemaSecondary" 
               size="lg"
               className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+              onClick={onViewShowtimes}
             >
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
               <span className="text-sm sm:text-base">View Showtimes</span>
@@ -103,6 +111,7 @@ const CinematicHero: React.FC<CinematicHeroProps> = ({
               variant="outline" 
               size="lg"
               className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+              onClick={onFindTheaters}
             >
               <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
               <span className="text-sm sm:text-base">Find Theaters</span>

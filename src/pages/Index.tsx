@@ -78,7 +78,28 @@ const Index = () => {
 		const matchesFormat = selectedFormat === "All" || movie.format.includes(selectedFormat);
 
 		return matchesSearch && matchesGenre && matchesLanguage && matchesFormat;
-	});	return (
+	});	const handleBookNow = () => {
+		// Navigate to theater selection for the featured movie (Neon Dreams)
+		navigate('/theater/neon-dreams');
+	};
+
+	const handleViewShowtimes = () => {
+		// Navigate to movie details to see showtimes
+		navigate('/movie/neon-dreams');
+	};
+
+	const handleFindTheaters = () => {
+		// Scroll to the "Now Showing" section
+		const nowShowingSection = document.getElementById('now-showing');
+		if (nowShowingSection) {
+			nowShowingSection.scrollIntoView({ 
+				behavior: 'smooth',
+				block: 'start'
+			});
+		}
+	};
+
+	return (
 		<div className="min-h-screen relative">			{/* Cinema hall background for the entire page */}
 			<div 
 				className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
@@ -101,11 +122,14 @@ const Index = () => {
 					description="Book your perfect movie experience with premium seating, gourmet snacks, and immersive entertainment"
 					featuredMovie={{
 						title: "Neon Dreams",
-					genre: "Sci-Fi Thriller",
-					rating: "4.8",
-					poster: movieNeonDreams
-				}}
-			/>			{/* Filters Section */}
+						genre: "Sci-Fi Thriller",
+						rating: "4.8",
+						poster: movieNeonDreams
+					}}
+					onBookNow={handleBookNow}
+					onViewShowtimes={handleViewShowtimes}
+					onFindTheaters={handleFindTheaters}
+				/>			{/* Filters Section */}
 			<section className="py-6 sm:py-8 bg-card/50 backdrop-blur-md relative">
 				<CinematicBackground variant="subtle" />
 				<div className="absolute top-0 left-0 right-0 h-px bg-muted/20"></div>
@@ -183,7 +207,7 @@ const Index = () => {
 			</section>
 
 			{/* Movies Section */}
-			<section className="py-16">
+			<section id="now-showing" className="py-16">
 				<div className="container mx-auto px-8">					<div className="mb-12">
 						<h2 className="font-cinematic text-4xl font-bold mb-4 text-center text-primary-glow neon-text">
 							Now Showing
