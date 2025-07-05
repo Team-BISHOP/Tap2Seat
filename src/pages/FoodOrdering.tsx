@@ -119,7 +119,7 @@ const FoodOrdering = () => {
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="font-cinematic text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-primary">
+          <h1 className="font-cinematic text-4xl font-bold mb-4 text-primary-glow neon-text">
             Food & Beverages
           </h1>
           <p className="text-muted-foreground text-lg">

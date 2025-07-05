@@ -36,9 +36,8 @@ const SeatSelection = () => {
       case 'occupied':
         return 'bg-seat-occupied cursor-not-allowed';
       case 'selected':
-        return 'bg-seat-selected animate-seat-bounce neon-glow cursor-pointer';
-      case 'best':
-        return 'bg-seat-available animate-glow-pulse cursor-pointer border-2 border-accent';
+        return 'bg-seat-selected animate-seat-bounce neon-glow cursor-pointer';      case 'best':
+        return 'bg-seat-available animate-glow-pulse cursor-pointer border-2 border-accent/50 shadow-accent-glow hover:border-accent hover:shadow-lg transition-all duration-300';
       default:
         return 'bg-seat-available hover:bg-primary-glow cursor-pointer hover:animate-seat-bounce';
     }
@@ -76,7 +75,7 @@ const SeatSelection = () => {
         <div className="container mx-auto max-w-6xl">
           {/* Header */}
           <div className="mb-8 text-center">
-            <h1 className="font-cinematic text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-primary">
+            <h1 className="font-cinematic text-4xl font-bold mb-4 text-primary-glow neon-text">
               Select Your Seats
             </h1>
             <p className="text-muted-foreground text-lg">
@@ -138,9 +137,8 @@ const SeatSelection = () => {
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-seat-occupied rounded" />
               <span className="text-sm">Occupied</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-seat-available border-2 border-accent rounded animate-pulse" />
+            </div>            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-seat-available border-2 border-accent/50 rounded animate-pulse shadow-accent-glow" />
               <span className="text-sm">Best Seats</span>
             </div>
           </div>

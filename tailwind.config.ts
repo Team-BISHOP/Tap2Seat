@@ -115,14 +115,15 @@ export default {
 					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--primary) / 0.3)' },
 					'50%': { boxShadow: '0 0 30px hsl(var(--primary) / 0.6)' }
 				}
-			},
-			animation: {
+			},			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'seat-bounce': 'seat-bounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
 				'shimmer': 'shimmer 2s infinite',
 				'pulse-soft': 'pulse-soft 2s infinite',
-				'glow-pulse': 'glow-pulse 2s infinite'
+				'glow-pulse': 'glow-pulse 2s infinite',
+				'spin-slow': 'spin-slow 8s linear infinite',
+				'gradient-shift': 'gradient-shift 3s ease infinite'
 			}
 		}
 	},

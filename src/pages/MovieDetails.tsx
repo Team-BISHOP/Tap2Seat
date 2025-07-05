@@ -69,7 +69,7 @@ const MovieDetails = () => {
         
         <div className="relative h-full flex items-end p-8">
           <div className="max-w-4xl">
-            <h1 className="font-cinematic text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-primary">
+            <h1 className="font-cinematic text-6xl font-bold mb-4 text-primary-glow neon-text">
               {movie.title}
             </h1>
             <div className="flex items-center gap-6 mb-6 text-lg">

@@ -21,7 +21,7 @@ const Confirmation = () => {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-seat-selected rounded-full mb-4 animate-seat-bounce">
             <CheckCircle className="w-12 h-12 text-white" />
           </div>
-          <h1 className="font-cinematic text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-primary">
+          <h1 className="font-cinematic text-4xl font-bold mb-4 text-primary-glow neon-text">
             Booking Confirmed!
           </h1>
           <p className="text-muted-foreground text-lg">
