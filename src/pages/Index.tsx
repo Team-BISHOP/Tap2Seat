@@ -88,7 +88,7 @@ const Index = () => {
 		navigate('/movie/neon-dreams');
 	};
 
-	const handleFindTheaters = () => {
+	const handleDiscoverMovies = () => {
 		// Scroll to the "Now Showing" section
 		const nowShowingSection = document.getElementById('now-showing');
 		if (nowShowingSection) {
@@ -128,7 +128,7 @@ const Index = () => {
 					}}
 					onBookNow={handleBookNow}
 					onViewShowtimes={handleViewShowtimes}
-					onFindTheaters={handleFindTheaters}
+					onFindTheaters={handleDiscoverMovies}
 				/>			{/* Filters Section */}
 			<section className="py-6 sm:py-8 bg-card/50 backdrop-blur-md relative">
 				<CinematicBackground variant="subtle" />

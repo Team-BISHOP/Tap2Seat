@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Play, Calendar, MapPin, Star } from 'lucide-react';
+import { Play, Calendar, MapPin, Star, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import CinematicBackground from './CinematicBackground';
 
@@ -113,8 +113,8 @@ const CinematicHero: React.FC<CinematicHeroProps> = ({
               className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto"
               onClick={onFindTheaters}
             >
-              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-sm sm:text-base">Find Theaters</span>
+              <Search className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm sm:text-base">Discover Movies</span>
             </Button>
           </div>
         )}
